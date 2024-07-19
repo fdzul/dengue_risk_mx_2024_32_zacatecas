@@ -238,12 +238,93 @@ flexdashboard::gauge(round((sum(y_hot$n_cases)/sum(y$n_cases))*100, digits = 1),
 # [**Hotspots de Vector**]{style="font-size:2pt"}
 
 ::: panel-tabset
+
+
+### [**Jalpa**]{style="color:#990000"}
+```{r vector_jalpa, dpi = 300, warning=FALSE, message=FALSE}
+deneggs::map_eggs_hotspots(betas = denmex::eggs_betas_32_zacatecas |>
+                               dplyr::filter(year >= 2016),
+                           locality = "Jalpa",
+                           cve_edo = "32",
+                           palette = rcartocolor::carto_pal,
+                           name = "SunsetDark",
+                           static_map = FALSE)
+```
+
+### [**Apozol**]{style="color:#990000"}
+```{r vector_apozol, dpi = 300, warning=FALSE, message=FALSE}
+deneggs::map_eggs_hotspots(betas = denmex::eggs_betas_32_zacatecas |>
+                               dplyr::filter(year >= 2016),
+                           locality = "Apozol",
+                           cve_edo = "32",
+                           palette = rcartocolor::carto_pal,
+                           name = "SunsetDark",
+                           static_map = FALSE)
+```
+
+### [**Jichipila**]{style="color:#990000"}
+```{r vector_jichipila, dpi = 300, warning=FALSE, message=FALSE}
+deneggs::map_eggs_hotspots(betas = denmex::eggs_betas_32_zacatecas |>
+                               dplyr::filter(year >= 2016),
+                           locality = "Jichipila",
+                           cve_edo = "32",
+                           palette = rcartocolor::carto_pal,
+                           name = "SunsetDark",
+                           static_map = FALSE)
+```
+
+### [**Moyahua**]{style="color:#990000"}
+```{r vector_moyahua, dpi = 300, warning=FALSE, message=FALSE}
+deneggs::map_eggs_hotspots(betas = denmex::eggs_betas_32_zacatecas |>
+                               dplyr::filter(year >= 2016),
+                           locality = "Moyahua de Estrada",
+                           cve_edo = "32",
+                           palette = rcartocolor::carto_pal,
+                           name = "SunsetDark",
+                           static_map = FALSE)
+```
+
+### [**Tabasco**]{style="color:#990000"}
+```{r vector_tabasco, dpi = 300, warning=FALSE, message=FALSE}
+deneggs::map_eggs_hotspots(betas = denmex::eggs_betas_32_zacatecas |>
+                               dplyr::filter(year >= 2016),
+                           locality = "Tabasco",
+                           cve_edo = "32",
+                           palette = rcartocolor::carto_pal,
+                           name = "SunsetDark",
+                           static_map = FALSE)
+```
+
+### [**Tlaltenango**]{style="color:#990000"}
+```{r vector_tlaltenango, dpi = 300, warning=FALSE, message=FALSE}
+deneggs::map_eggs_hotspots(betas = denmex::eggs_betas_32_zacatecas |>
+                               dplyr::filter(year >= 2016),
+                           locality = "Tlaltenango de Sanchez Roman",
+                           cve_edo = "32",
+                           palette = rcartocolor::carto_pal,
+                           name = "SunsetDark",
+                           static_map = FALSE)
+```
+
+
 :::
 
 
 # [**Escenarios Epidemiológicos**]{style="font-size:2pt"}
 
 ::: panel-tabset
+### [**Jalpa**]{style="color:#990000"}
+```{r risk_ageb_jalpa}
+denhotspots::risk_ageb(betas = denmex::eggs_betas_32_zacatecas,
+                       hotspots = denmex::den_hotspots,
+                       intensity_perc = 25,
+                       locality = "Jalpa",
+                       cve_edo = "32") |>
+    denhotspots::map_risk(staticmap = FALSE)
+
+```
+
+
 :::
 
 
